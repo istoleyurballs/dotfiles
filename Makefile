@@ -3,6 +3,9 @@ STOW_APPS = fish starship zellij neovim alacritty paru hyprland hyprpaper hyprlo
 .PHONY: all
 all: $(STOW_APPS) pipewire devcontainer
 
+.PHONY: cli
+cli: fish starship zellij neovim
+
 .PHONY: $(STOW_APPS)
 $(STOW_APPS):
 	stow $@
@@ -15,4 +18,4 @@ pipewire:
 
 .PHONY: devcontainer
 devcontainer:
-	docker build -t devcontainer ./devcontainer
+	docker build -t devcontainer -f ./devcontainer/Dockerfile .
