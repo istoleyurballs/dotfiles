@@ -1,7 +1,7 @@
 STOW_APPS = fish starship zellij neovim alacritty paru hyprland hyprpaper hyprlock hyprsunset waybar rofi dunst fontconfig ssh nix
 
 .PHONY: all
-all: $(STOW_APPS) pipewire devcontainer
+all: $(STOW_APPS) pipewire
 
 .PHONY: cli
 cli: fish starship zellij neovim
