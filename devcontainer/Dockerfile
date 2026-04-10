@@ -4,7 +4,8 @@ RUN pacman -Syu --noconfirm \
   stow \
   fish starship neovim zellij git \
   rust rust-analyzer mold cargo-nextest cargo-expand cargo-bloat cargo-geiger \
-  vscode-html-languageserver prettier
+  vscode-html-languageserver prettier \
+  wayland wayland-protocols
 
 RUN useradd -m --uid 1000 dev
 USER dev
