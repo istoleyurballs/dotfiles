@@ -7,8 +7,13 @@ all: $(STOW_APPS) pipewire
 cli: fish starship zellij neovim
 
 .PHONY: $(STOW_APPS)
-$(STOW_APPS):
+$(STOW_APPS): prepare-dirs
 	stow $@
+
+.PHONY: prepare-dirs
+prepare-dirs:
+	mkdir -p ~/.ssh
+	mkdir -p ~/.config/fish
 
 .PHONY: pipewire
 pipewire:
