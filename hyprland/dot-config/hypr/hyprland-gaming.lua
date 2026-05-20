@@ -20,8 +20,8 @@ hl.window_rule({
 hl.on("hyprland.start", function()
     hl.exec_cmd("uwsm app -- flatpak run com.discordapp.Discord")
     hl.exec_cmd("uwsm app -- steam -tenfoot")
-    hl.exec_cmd("uwsm app -- " .. TERMINAL .. " -e gotop", { workspace = "2", silent = true })
-    hl.exec_cmd("uwsm app -- " .. TERMINAL .. " -e nvtop", { workspace = "2", silent = true })
+    hl.exec_cmd("uwsm app -- " .. TERMINAL .. " -e htop", { workspace = "2 silent" })
+    hl.exec_cmd("uwsm app -- " .. TERMINAL .. " -e nvtop", { workspace = "2 silent" })
     -- Want color accurate gaming
     hl.exec_cmd("sleep 1 && hyprctl hyprsunset identity")
 end)
