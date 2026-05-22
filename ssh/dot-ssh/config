@@ -11,3 +11,7 @@ Host coruscant
   User root
   HostName 192.168.1.27
   IdentityFile ~/.ssh/coruscant-root.key
+
+Host push.mon.enorme.uk
+  User git
+  IdentityFile ~/.ssh/enorme-uk.key
