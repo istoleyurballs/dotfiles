@@ -10,7 +10,7 @@ hl.monitor({
     bitdepth = 10,
     cm = "hdredid",
     sdr_min_luminance = 0.005,
-    sdr_max_luminance = 250,
+    -- sdr_max_luminance = 250,
 })
 
 hl.on("hyprland.start", function()
