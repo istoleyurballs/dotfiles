@@ -1,5 +1,8 @@
 [user]
 	name = Lucas Malandrino
 	email = lucas.malandrino@gmail.com
+	signingkey = 02DD0C26AF8B7DF3E00C9A5218312545EC16027D
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
