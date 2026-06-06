@@ -5,23 +5,22 @@ hl.workspace_rule({ workspace = "2", monitor = "DP-2", default = true })
 hl.workspace_rule({ workspace = "3", monitor = "DP-3", default = true })
 
 hl.window_rule({
-    name = "gaming-discord-ws3",
-    match = { class = "discord" },
-    workspace = "3",
-    no_initial_focus = true,
-})
-
-hl.window_rule({
     name = "gaming-steam-ws1",
     match = { class = "steam" },
     workspace = "1",
 })
 
+hl.window_rule({
+    name = "gaming-discord-ws3",
+    match = { class = "discord" },
+    workspace = "2",
+    no_initial_focus = true,
+})
+
 hl.on("hyprland.start", function()
     hl.exec_cmd("uwsm app -- flatpak run com.discordapp.Discord")
     hl.exec_cmd("uwsm app -- steam -tenfoot")
-    hl.exec_cmd("uwsm app -- " .. TERMINAL .. " -e htop", { workspace = "2 silent" })
-    hl.exec_cmd("uwsm app -- " .. TERMINAL .. " -e nvtop", { workspace = "2 silent" })
+    hl.exec_cmd("uwsm app -- " .. TERMINAL .. " -e btop", { workspace = "3 silent" })
     -- Want color accurate gaming
     hl.exec_cmd("sleep 1 && hyprctl hyprsunset identity")
 end)
