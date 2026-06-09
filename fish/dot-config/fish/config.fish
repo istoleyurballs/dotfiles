@@ -8,6 +8,9 @@ end
 # Remove greeting
 set fish_greeting
 
+# Append to path
+fish_add_path --append $HOME/.cargo/bin
+
 # Set editor
 set -x EDITOR nvim
 
