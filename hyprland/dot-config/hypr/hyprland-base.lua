@@ -102,7 +102,7 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing    = false,
 
-        layout           = "dwindle",
+        layout           = "scrolling",
     },
 
     decoration = {
@@ -197,6 +197,7 @@ hl.config({
 hl.config({
     scrolling = {
         fullscreen_on_one_column = true,
+        explicit_column_widths = "0.5, 1.0",
     },
 })
 
@@ -266,6 +267,10 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("uwsm app -- hyprlock"))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+
+-- Scrolling layout bindings
+hl.bind(mainMod .. " + comma", hl.dsp.layout("consume_or_expel next"))
+hl.bind(mainMod .. " + period", hl.dsp.layout("colresize +conf"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
