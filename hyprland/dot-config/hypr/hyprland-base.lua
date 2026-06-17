@@ -90,7 +90,7 @@ hl.config({
         border_size      = 2,
 
         col              = {
-            active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+            active_border   = { colors = { "rgba(d95757ff)", "rgba(e6b450ff)" }, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -104,7 +104,7 @@ hl.config({
     },
 
     decoration = {
-        rounding         = 10,
+        rounding         = 0,
         rounding_power   = 2,
 
         -- Change transparency of focused and unfocused windows
@@ -365,6 +365,13 @@ hl.window_rule({
 --     no_anim = true,
 -- })
 -- overlayLayerRule:set_enabled(false)
+hl.layer_rule({
+    name = "noctalia",
+    match = { namespace = "noctalia-background-.*$" },
+    ignore_alpha = 0.5,
+    blur = true,
+    blur_popups = true,
+})
 
 -- Hyprland-run windowrule
 hl.window_rule({

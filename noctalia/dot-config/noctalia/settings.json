@@ -82,7 +82,7 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "maxWidth": 300,
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "showText": true,
@@ -229,7 +229,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Ayu Blue",
+        "predefinedScheme": "Ayu Red",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
