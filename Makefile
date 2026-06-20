@@ -14,6 +14,7 @@ $(STOW_APPS): prepare-dirs
 prepare-dirs:
 	mkdir -p ~/.ssh
 	mkdir -p ~/.config/fish
+	mkdir -p ~/.local/share/bin
 
 .PHONY: pipewire
 pipewire:
@@ -22,5 +23,6 @@ pipewire:
 	systemctl enable --user wireplumber.service
 
 .PHONY: devcontainer
-devcontainer:
-	docker build -t devcontainer -f ./devcontainer/Dockerfile .
+devcontainer: prepare-dirs
+	make -C devcontainer build
+	stow devcontainer

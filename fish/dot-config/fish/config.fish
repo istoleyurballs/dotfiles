@@ -9,7 +9,7 @@ end
 set fish_greeting
 
 # Append to path
-fish_add_path --append $HOME/.cargo/bin
+fish_add_path --append $HOME/.local/bin $HOME/.cargo/bin
 
 # Set editor
 set -x EDITOR nvim

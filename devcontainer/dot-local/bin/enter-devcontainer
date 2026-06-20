@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -eu -o pipefail
+
+DOCKER=${DOCKER:-podman}
+
+project="$(realpath ${1:-$(pwd)})"
+project_name=$(basename $project)
+
+$DOCKER run -it --rm \
+  -v $HOME/dotfiles:$HOME/dotfiles:ro \
+  -v $HOME/.config:$HOME/.config:ro \
+  -v devcontainer-cargo:$HOME/.cargo \
+  -v devcontainer-$project_name-local:$HOME/.local \
+  -v devcontainer-$project_name-cache:$HOME/.cache \
+  -v $project:$project \
+  --workdir $project \
+  --userns keep-id \
+  --passwd-entry $(grep "$(id -u):$(id -g)" /etc/passwd) \
+  --user $(id -u):$(id -g) \
+  --hostname $project_name \
+  --name $project_name-$$ \
+  devcontainer \
+  $SHELL
