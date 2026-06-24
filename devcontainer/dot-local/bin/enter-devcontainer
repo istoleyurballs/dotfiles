@@ -7,6 +7,8 @@ DOCKER=${DOCKER:-podman}
 project="$(realpath ${1:-$(pwd)})"
 project_name=$(basename $project)
 
+shift 1
+
 $DOCKER run -it --rm \
   -v $HOME/dotfiles:$HOME/dotfiles:ro \
   -v $HOME/.config:$HOME/.config:ro \
@@ -20,5 +22,6 @@ $DOCKER run -it --rm \
   --user $(id -u):$(id -g) \
   --hostname $project_name \
   --name $project_name-$$ \
+  "$@" \
   devcontainer \
   $SHELL
