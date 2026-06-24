@@ -22,6 +22,8 @@ alias .....='cd ../../../..'
 
 alias pacrmorphans='sudo pacman -Rns (pacman -Qtdq)'
 
+alias aria2c-seed='aria2c --no-want-digest-header --allow-overwrite=false --check-integrity=true --seed-ratio=0.0'
+
 set PRISM_INSTANCE_FOLDER ~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances
 
 function migrate-gtnh-instance -a from to
