@@ -319,11 +319,7 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(noctalia .. " media playPause"), { lock
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(noctalia .. " media previous"), { locked = true })
 
 -- Cycle keyboard layouts
-hl.bind(mainMod .. " + SPACE", function()
-    hl.exec_cmd("hyprctl switchxkblayout current next")
-    hl.exec_cmd(
-        "notify-send -u low -t 1000 \"Current keymap: $(hyprctl devices -j | jq -r '.keyboards | map(select(.main)) | .[0].active_keymap')\"")
-end)
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("hyprctl switchxkblayout current next"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
