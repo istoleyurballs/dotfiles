@@ -1,0 +1,69 @@
+[audio]
+enable_overdrive = true
+
+[bar.default]
+background_opacity = 0.5
+capsule_radius = 0
+center = []
+concave_edge_corners = false
+end = [ "tray", "notifications", "volume", "clock", "control-center" ]
+font_family = "JetBrainsMono NF"
+margin_ends = 4
+padding = 2
+radius = 0
+shadow = false
+start = [ "sysmon", "workspaces", "media", "audio_visualizer" ]
+thickness = 20
+widget_spacing = 16
+
+[control_center]
+hidden_tabs = [ "monitor", "power", "network", "bluetooth", "weather" ]
+shortcuts = []
+
+[desktop_widgets]
+enabled = false
+
+[lockscreen]
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = false
+
+[osd]
+position = "top_right"
+
+[shell]
+clipboard_auto_paste = "ctrl_v"
+corner_radius_scale = 0.0
+font_family = "JetBrainsMono NF"
+launch_apps_as_systemd_services = true
+offline_mode = true
+screen_time_enabled = true
+
+    [shell.panel]
+    transparency_mode = "soft"
+
+    [shell.screenshot]
+    confirm_region = true
+    directory = "/home/lucas/Pictures/Screenshots"
+
+[theme]
+pure_black_dark = true
+source = "wallpaper"
+wallpaper_scheme = "dysfunctional"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/lucas/.config/noctalia"
+
+    [wallpaper.automation]
+    recursive = false
+
+    [wallpaper.default]
+    path = "/home/lucas/.config/noctalia/ultrakill_wp_red.png"
+
+[weather]
+enabled = false
