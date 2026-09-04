@@ -362,6 +362,8 @@ hl.window_rule({
 --     no_anim = true,
 -- })
 -- overlayLayerRule:set_enabled(false)
+
+-- Required for noctalia
 hl.layer_rule({
     name = "noctalia",
     match = {
@@ -380,4 +382,15 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+-- Partially fixes the cursor escaping the window problem but not completely
+hl.window_rule({
+    name = "capture-cursor-on-games",
+    match = {
+        class = "^steam_app_.+$",
+        -- content = "game",
+        fullscreen = true
+    },
+    confine_pointer = true,
 })
